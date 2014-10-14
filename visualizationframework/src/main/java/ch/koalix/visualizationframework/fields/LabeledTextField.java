@@ -1,5 +1,6 @@
 package ch.koalix.visualizationframework.fields;
 
+
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -12,11 +13,13 @@ import javafx.scene.layout.VBox;
  */
 public class LabeledTextField extends VBox {
 	
+	private final Label label; 
 	private final TextField textField; 
 	
-	public LabeledTextField(String name) {
+	LabeledTextField(String name) {
+		label = new Label(name);
 		textField = new TextField();
-		this.getChildren().addAll(new Label(name), textField);
+		this.getChildren().addAll(label, textField);
 	}
 	
 	public void setText(String text) {
@@ -26,6 +29,4 @@ public class LabeledTextField extends VBox {
 	public String getText() {
 		return this.textField.getText(); 
 	}
-	
-	
 }
